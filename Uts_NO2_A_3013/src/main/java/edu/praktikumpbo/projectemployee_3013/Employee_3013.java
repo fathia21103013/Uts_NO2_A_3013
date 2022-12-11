@@ -7,15 +7,16 @@ package edu.praktikumpbo.projectemployee_3013;
 /**
  *
  * @author ASUS
+ * Nama : Fathia Ismi Rahma
+ * NIM  : 21103013
  */
-public class Employee_3013 {
-    protected String Nama;
-    protected String NIP;
-    protected float GajiPokok;
+public abstract class Employee_3013 {
+    protected String nama,nip;
     
-    public void Tampil(){
-        System.out.println("Nama: " + Nama);
-        System.out.println("NIP: " + NIP);
-        System.out.println("Gaji Pokok: " + GajiPokok);
+    public Employee_3013(String nama, String nip){
+        this.nama = nama;
+        this.nip = nip;
+    }
+    public void cetakInformasi(){   
     }
 }

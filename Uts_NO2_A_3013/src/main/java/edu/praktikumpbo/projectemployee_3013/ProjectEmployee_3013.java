@@ -11,51 +11,26 @@ import java.io.InputStreamReader;
 /**
  *
  * @author ASUS
+ * Nama : Fathia Ismi Rahma
+ * NIM  : 21103013
  */
 public class ProjectEmployee_3013 {
 
     public static void main(String[] args) {
-        Salaried_employee_3013 se = new Salaried_employee_3013();
-        CommissionEmployee_3013 ce = new CommissionEmployee_3013();
-        ProjectPlanner_3013 pp = new ProjectPlanner_3013();
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));        
-        try{
-            System.out.println("Data Pegawai");
-            System.out.print("Nama: ");
-            se.Nama = br.readLine();
-            System.out.print("NIP: ");
-            se.NIP = br.readLine();
-            System.out.print("Gaji Pokok: ");
-            se.GajiPokok = Float.parseFloat(br.readLine());
-            se.TampilData();
-            
-            System.out.print("Nama: ");
-            ce.Nama = br.readLine();
-            System.out.print("NIP: ");
-            ce.NIP = br.readLine();
-            System.out.print("GajiPokok: ");
-            ce.GajiPokok = Float.parseFloat(br.readLine());
-            System.out.print("Komisi: ");
-            ce.Komisi = Float.parseFloat(br.readLine());
-            System.out.print("Total Penjualan: ");
-            ce.TotalPenjualan = Float.parseFloat(br.readLine());
-            ce.TotalGaji();
-            ce.TampilData();
-            
-            System.out.print("Nama: ");
-            pp.Nama = br.readLine();
-            System.out.print("NIP: ");
-            pp.NIP = br.readLine();
-            System.out.print("Gaji Pokok: ");
-            pp.GajiPokok = Float.parseFloat(br.readLine());
-            System.out.print("Komisi: ");
-            pp.Komisi = Float.parseFloat(br.readLine());
-            System.out.print("Total Hasil Proyek: ");
-            pp.TotalHslProyek = Float.parseFloat(br.readLine());
-            pp.TotalGaji();
-            pp.TampilData();
-        }catch(Exception ex){
-            System.out.println(ex);
-        }
+        CommissionEmployee_3013 C = new CommissionEmployee_3013("Fathia Ismi Rahma", 
+             "99922111", 5000000, 50000, 100);
+        ProjectPlanner_3013 P = new ProjectPlanner_3013("Fafa Angelica", "9988162625", 
+             1000000, 100000, 8);
+        Salaried_employee_3013 S = new Salaried_employee_3013("Tectonia Laurana", "1122887537", 
+             100000);
+
+        System.out.println("\t== Data Comission Employee ==");
+        C.cetakInformasi();
+        System.out.println("");
+        System.out.println("\t== Data Project Planner ==");
+        P.cetakInformasi();
+        System.out.println("");
+        System.out.println("\t== Data Salaried Employee ==");
+        S.cetakInformasi();
     }
 }

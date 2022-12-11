@@ -7,24 +7,51 @@ package edu.praktikumpbo.projectemployee_3013;
 /**
  *
  * @author ASUS
+ * Nama : Fathia Ismi Rahma
+ * NIM  : 21103013
+ 
  */
 public class ProjectPlanner_3013 extends Employee_3013{
-    public float Komisi;
-    public float TotalHslProyek;
-    public double Totalgaji;
+    private int gajiPokok, komisi, totalHasilProyek;
+    float pajak;
+    int gaji;
     
-    public ProjectPlanner_3013(){
-        
+    public ProjectPlanner_3013(String nama, String nip, int gajiPokok, 
+        int komisi, int totalHasilProyek){
+        super(nama,nip);
+        this.gajiPokok = gajiPokok;
+        this.komisi = komisi;
+        this.totalHasilProyek = totalHasilProyek;
     }
-            
-    public double TotalGaji(){
-        Totalgaji = GajiPokok + (Komisi * TotalHslProyek) - (GajiPokok*5/100);
-        return Totalgaji;
+    public void setGajiPokok(int gajipokok){
+        this.gajiPokok = gajipokok;
     }
-    
-    public void TampilData(){
-        System.out.println("Project Plannner");
-        Tampil();
-        System.out.println("Total Gaji: " + Totalgaji);
+    public void setKomisi(int komisi){
+        this.komisi = komisi;
+    }
+    public void setTotalHasilProyek(int totalHasilProyek){
+        this.totalHasilProyek = totalHasilProyek;
+    }
+    public int getGajiPokok(){
+        return gajiPokok;
+    }
+    public int getKomisi(){
+        return komisi;
+    }
+    public int getTotalHasilProyek(){
+        return totalHasilProyek;
+    }
+    public void menghitungGaji(){
+        pajak = (float) (0.05*gajiPokok);
+        gaji = (int) (gajiPokok + (komisi*totalHasilProyek)-pajak);
+        System.out.println("GAJI                : Rp "+gaji);
+    }
+    public void cetakInformasi(){
+        System.out.println("NAMA                : "+nama);
+        System.out.println("NIP                 : "+nip);
+        System.out.println("GAJI POKOK          : Rp "+gajiPokok);
+        System.out.println("KOMISI              : Rp "+komisi);
+        System.out.println("TOTAL HASIL PROYEK  : "+totalHasilProyek);
+        menghitungGaji();
     }
 }
